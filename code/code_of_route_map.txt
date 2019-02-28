@@ -1,0 +1,2508 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+#include<GLUT.h>
+#include<string.h>
+
+float x1=0.5;
+int j=1,then=0,help=0,navi=0;
+void road1(float x,float y,float z,float h,float w);
+void apart(float x,float y,float z);
+float aa,bb,cc;
+int academic=0,account=0,admin=0,bank=0,amphi=0,science=0,bmssa1=0,bmssa2=0,bsn=0,cafe=0,civil=0,cse=0,
+ ece=0,found=0,hostel=0,gym=0,ise=0,lab=0,lib=0,mca=0,park=0,plac=0,princi=0;
+int fa,fb,fc,fd,fe,ff,fi,fj,fk,fl,fm,fn,fo,fp,fq,fr,fs,ft,fu,fz;
+char s1[]="BMS INSTITUTE OF TECHNOLOGY AND MANAGEMENT";
+char s2[]="DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING";
+char s3[]="COMPUTER GRAPHICS MINI PROJECT";
+char s4[]=" 3D ROUTE MAP OF BMSIT&M ";
+char s5[]="BY :";
+char s13[]="TANUJA S(1BY14CS081)";
+char s14[]="TANUSHREE S(1BY14CS082)";
+char s15[]="UNDER THE GUIDANCE OF :";
+char s7[]="DR ANIL G N";
+char s16[]="MR ANAND R";
+char s18[]=" PRESS 's' TO START . . . ";
+char s21[]="PRESS 'x' FOR X-AXIS ROTATION";
+char s22[]="PRESS 'y' FOR Y-AXIS ROTATION";
+char s23[]="PRESS 'z' FOR Z-AXIS ROTATION";
+char s24[]="PRESS 'n' FOR NAVIGATING THE CAMPUS IN 3D VIEW ";
+char s25[]="PRESS 'v' FOR V 3D VIEW OF BMSIT&M.....";
+char s26[]="HELP :";
+char s27[]="USE MOUSE BUTTONS FOR CHOOSING DESTINATION ";
+
+
+void trees()
+{
+//trunk1
+	glColor3ub(95,6,5);
+	glBegin(GL_POLYGON);
+	glVertex3f(-105,0,0);
+	glVertex3f(-100,0,0);
+	glVertex3f(-100,0,15);
+	glVertex3f(-105,0,15);
+	glEnd();
+
+//leaf1
+	glColor3f(0.0,0.2,0.0);
+	glBegin(GL_POLYGON);
+	glVertex3f(-115,0,15);
+	glVertex3f(-90,0,15);
+	glVertex3f(-102.5,0,35);
+	glEnd();
+//leaf2
+	glColor3f(0.0,0.2,0.0);
+	glBegin(GL_POLYGON);
+	glVertex3f(-113,0,25);
+	glVertex3f(-92,0,25);
+	glVertex3f(-102.5,0,45);
+	glEnd();
+//leaf3
+	glColor3f(0.0,0.2,0.0);
+	glBegin(GL_POLYGON);
+	glVertex3f(-111,0,35);
+	glVertex3f(-94,0,35);
+	glVertex3f(-102.5,0,55);
+	glEnd();
+
+
+//trunk2
+	glColor3ub(95,6,5);
+	glBegin(GL_POLYGON);
+	glVertex3f(-145,0,0);
+	glVertex3f(-140,0,0);
+	glVertex3f(-140,0,15);
+	glVertex3f(-145,0,15);
+	glEnd();
+
+//leaf1 of 2
+	glColor3f(0.0,0.2,0.0);
+	glBegin(GL_POLYGON);
+	glVertex3f(-155,0,15);
+	glVertex3f(-130,0,15);
+	glVertex3f(-142.5,0,35);
+	glEnd();
+//leaf2 of 2
+	glColor3f(0.0,0.2,0.0);
+	glBegin(GL_POLYGON);
+	glVertex3f(-153,0,25);
+	glVertex3f(-132,0,25);
+	glVertex3f(-142.5,0,45);
+	glEnd();
+//leaf3 of 2
+	glColor3f(0.0,0.2,0.0);
+	glBegin(GL_POLYGON);
+	glVertex3f(-151,0,35);
+	glVertex3f(-134,0,35);
+	glVertex3f(-142.5,0,55);
+	glEnd();
+
+
+
+//trunk3
+	glColor3ub(95,6,5);
+	glBegin(GL_POLYGON);
+	glVertex3f(-75,10,0);
+	glVertex3f(-70,10,0);
+	glVertex3f(-70,10,15);
+	glVertex3f(-75,10,15);
+	glEnd();
+
+//leaf1 of 3
+	glColor3f(0.0,0.2,0.0);
+	glBegin(GL_POLYGON);
+	glVertex3f(-85,10,15);
+	glVertex3f(-60,10,15);
+	glVertex3f(-72.5,10,35);
+	glEnd();
+//leaf2 of 3
+	glColor3f(0.0,0.2,0.0);
+	glBegin(GL_POLYGON);
+	glVertex3f(-83,10,25);
+	glVertex3f(-62,10,25);
+	glVertex3f(-72.5,10,45);
+	glEnd();
+//leaf3 of 3
+	glColor3f(0.0,0.2,0.0);
+	glBegin(GL_POLYGON);
+	glVertex3f(-81,10,35);
+	glVertex3f(-64,10,35);
+	glVertex3f(-72.5,10,55);
+	glEnd();
+
+
+
+//trunk4
+	glColor3ub(95,6,5);
+	glBegin(GL_POLYGON);
+	glVertex3f(-45,-10,0);
+	glVertex3f(-40,-10,0);
+	glVertex3f(-40,-10,15);
+	glVertex3f(-45,-10,15);
+	glEnd();
+
+//leaf1 of 4
+	glColor3f(0.0,0.2,0.0);
+	glBegin(GL_POLYGON);
+	glVertex3f(-55,-10,15);
+	glVertex3f(-30,-10,15);
+	glVertex3f(-42.5,-10,35);
+	glEnd();
+//leaf2 of 4
+	glColor3f(0.0,0.2,0.0);
+	glBegin(GL_POLYGON);
+	glVertex3f(-53,-10,25);
+	glVertex3f(-32,-10,25);
+	glVertex3f(-42.5,-10,45);
+	glEnd();
+//leaf3 of 4
+	glColor3f(0.0,0.2,0.0);
+	glBegin(GL_POLYGON);
+	glVertex3f(-51,-10,35);
+	glVertex3f(-34,-10,35);
+	glVertex3f(-42.5,-10,55);
+	glEnd();
+
+//trunk4
+	glColor3ub(95,6,5);
+	glBegin(GL_POLYGON);
+	glVertex3f(45,-10,0);
+	glVertex3f(40,-10,0);
+	glVertex3f(40,-10,15);
+	glVertex3f(45,-10,15);
+	glEnd();
+
+//leaf1 of 4
+	glColor3f(0.0,0.2,0.0);
+	glBegin(GL_POLYGON);
+	glVertex3f(55,-10,15);
+	glVertex3f(30,-10,15);
+	glVertex3f(42.5,-10,35);
+	glEnd();
+//leaf2 of 4
+	glColor3f(0.0,0.2,0.0);
+	glBegin(GL_POLYGON);
+	glVertex3f(53,-10,25);
+	glVertex3f(32,-10,25);
+	glVertex3f(42.5,-10,45);
+	glEnd();
+//leaf3 of 4
+	glColor3f(0.0,0.2,0.0);
+	glBegin(GL_POLYGON);
+	glVertex3f(51,-10,35);
+	glVertex3f(34,-10,35);
+	glVertex3f(42.5,-10,55);
+	glEnd();
+//trunk5
+	glColor3ub(95,6,5);
+	glBegin(GL_POLYGON);
+	glVertex3f(45,-10,0);
+	glVertex3f(40,-10,0);
+	glVertex3f(40,-10,15);
+	glVertex3f(45,-10,15);
+	glEnd();
+
+//leaf1 of 5
+	glColor3f(0.0,0.2,0.0);
+	glBegin(GL_POLYGON);
+	glVertex3f(55,-10,15);
+	glVertex3f(30,-10,15);
+	glVertex3f(42.5,-10,35);
+	glEnd();
+//leaf2 of 5
+	glColor3f(0.0,0.2,0.0);
+	glBegin(GL_POLYGON);
+	glVertex3f(53,-10,25);
+	glVertex3f(32,-10,25);
+	glVertex3f(42.5,-10,45);
+	glEnd();
+//leaf3 of 5
+	glColor3f(0.0,0.2,0.0);
+	glBegin(GL_POLYGON);
+	glVertex3f(51,-10,35);
+	glVertex3f(34,-10,35);
+	glVertex3f(42.5,-10,55);
+	glEnd();
+
+
+	//trunk6
+	glColor3ub(95,6,5);
+	glBegin(GL_POLYGON);
+	glVertex3f(50,40,0);
+	glVertex3f(45,40,0);
+	glVertex3f(45,40,15);
+	glVertex3f(50,40,15);
+	glEnd();
+
+//leaf1 of 6
+	glColor3f(0.0,0.2,0.0);
+	glBegin(GL_POLYGON);
+	glVertex3f(60,40,15);
+	glVertex3f(35,40,15);
+	glVertex3f(47.5,40,35);
+	glEnd();
+//leaf2 of 6
+	glColor3f(0.0,0.2,0.0);
+	glBegin(GL_POLYGON);
+	glVertex3f(58,40,25);
+	glVertex3f(37,40,25);
+	glVertex3f(47.5,40,45);
+	glEnd();
+//leaf3 of 6
+	glColor3f(0.0,0.2,0.0);
+	glBegin(GL_POLYGON);
+	glVertex3f(56,40,35);
+	glVertex3f(39,40,35);
+	glVertex3f(47.5,40,55);
+	glEnd();
+
+
+
+
+}
+
+void man1()
+{
+	//face
+	glColor3ub(255,191,128);
+	glBegin(GL_POLYGON);
+	glVertex3f(0,0,16);
+	glVertex3f(3,0,16);
+	glVertex3f(5,0,18.5);
+	glVertex3f(3,0,21);
+	glVertex3f(0,0,21);
+	glVertex3f(-2,0,18.5);
+	glEnd();
+
+	//shirt
+	glColor3ub(160,150,250);
+	glBegin(GL_POLYGON);
+	glVertex3f(6,0,6);
+	glVertex3f(6,0,16);
+	glVertex3f(-3,0,16);
+	glVertex3f(-3,0,6);
+	glEnd();
+	//left arm
+	glColor3ub(255,191,128);
+	glBegin(GL_POLYGON);
+	glVertex3f(6,0,16);
+	glVertex3f(10,0,6);
+	glVertex3f(9,0,9);
+	glVertex3f(6,0,11);
+	glEnd();
+	//right arm
+	glColor3ub(255,191,128);
+	glBegin(GL_POLYGON);
+	glVertex3f(-3,0,16);
+	glVertex3f(-3,0,11);
+	glVertex3f(-6,0,9);
+	glVertex3f(-7,0,6);
+	glEnd();
+	//right leg
+glColor3ub(80,80,230);
+glBegin(GL_POLYGON);
+	glVertex3f(-5,0,0);
+	glVertex3f(0.5,0,0);
+	glVertex3f(1.5,0,6);
+	glVertex3f(-3,0,6);
+	glEnd();
+//left leg
+	glColor3ub(80,80,230);
+glBegin(GL_POLYGON);
+	glVertex3f(2.5,0,0);
+	glVertex3f(8,0,0);
+	glVertex3f(6,0,6);
+	glVertex3f(1.5,0,6);
+	glEnd();
+
+//hair right
+	glColor3f(0,0,0);
+	glBegin(GL_POLYGON);
+	glVertex3f(0,-0.1,21);
+	glVertex3f(0,-0.1,19);
+	glVertex3f(1,-0.1,19);
+	glVertex3f(1.5,-0.1,21);
+	glEnd();
+
+//hair left
+	glColor3f(0,0,0);
+	glBegin(GL_POLYGON);
+	glVertex3f(1.5,-0.1,21);
+	glVertex3f(2,-0.1,19);
+	glVertex3f(3,-0.1,19);
+	glVertex3f(3,-0.1,21);
+	glEnd();
+
+
+
+
+}
+
+void man2()
+{
+	//face
+	glColor3ub(255,191,128);
+	glBegin(GL_POLYGON);
+	glVertex3f(0,-180,16);
+	glVertex3f(3,-180,16);
+	glVertex3f(5,-180,18.5);
+	glVertex3f(3,-180,21);
+	glVertex3f(0,-180,21);
+	glVertex3f(-2,-180,18.5);
+	glEnd();
+
+	//shirt
+	glColor3ub(160,150,250);
+	glBegin(GL_POLYGON);
+	glVertex3f(6,-180,6);
+	glVertex3f(6,-180,16);
+	glVertex3f(-3,-180,16);
+	glVertex3f(-3,-180,6);
+	glEnd();
+	//left arm
+	glColor3ub(255,191,128);
+	glBegin(GL_POLYGON);
+	glVertex3f(6,-180,16);
+	glVertex3f(10,-180,6);
+	glVertex3f(9,-180,9);
+	glVertex3f(6,-180,11);
+	glEnd();
+	//right arm
+	glColor3ub(255,191,128);
+	glBegin(GL_POLYGON);
+	glVertex3f(-3,-180,16);
+	glVertex3f(-3,-180,11);
+	glVertex3f(-6,-180,9);
+	glVertex3f(-7,-180,6);
+	glEnd();
+	//right leg
+glColor3ub(80,80,230);
+glBegin(GL_POLYGON);
+	glVertex3f(-5,-180,0);
+	glVertex3f(0.5,-180,0);
+	glVertex3f(1.5,-180,6);
+	glVertex3f(-3,-180,6);
+	glEnd();
+//left leg
+	glColor3ub(80,80,230);
+glBegin(GL_POLYGON);
+	glVertex3f(2.5,-180,0);
+	glVertex3f(8,-180,0);
+	glVertex3f(6,-180,6);
+	glVertex3f(1.5,-180,6);
+	glEnd();
+
+//hair right
+	glColor3f(0,0,0);
+	glBegin(GL_POLYGON);
+	glVertex3f(0,-180.1,21);
+	glVertex3f(0,-180.1,19);
+	glVertex3f(1,-180.1,19);
+	glVertex3f(1.5,-180.1,21);
+	glEnd();
+
+//hair left
+	glColor3f(0,0,0);
+	glBegin(GL_POLYGON);
+	glVertex3f(1.5,-180.1,21);
+	glVertex3f(2,-180.1,19);
+	glVertex3f(3,-180.1,19);
+	glVertex3f(3,-180.1,21);
+	glEnd();
+
+
+
+
+}
+
+void woman2()
+{
+	//face
+	glColor3ub(255,191,128);
+	glBegin(GL_POLYGON);
+	glVertex3f(100,-180,16);
+	glVertex3f(103,-180,16);
+	glVertex3f(105,-180,18.5);
+	glVertex3f(103,-180,21);
+	glVertex3f(100,-180,21);
+	glVertex3f(98,-180,18.5);
+	glEnd();
+
+	//shirt
+	glColor3ub(160,150,250);
+	glBegin(GL_POLYGON);
+	glVertex3f(106,-180,6);
+	glVertex3f(106,-180,16);
+	glVertex3f(97,-180,16);
+	glVertex3f(97,-180,6);
+	glEnd();
+	//left arm
+	glColor3ub(255,191,128);
+	glBegin(GL_POLYGON);
+	glVertex3f(106,-180,16);
+	glVertex3f(110,-180,6);
+	glVertex3f(109,-180,9);
+	glVertex3f(106,-180,11);
+	glEnd();
+	//right arm
+	glColor3ub(255,191,128);
+	glBegin(GL_POLYGON);
+	glVertex3f(97,-180,16);
+	glVertex3f(97,-180,11);
+	glVertex3f(94,-180,9);
+	glVertex3f(93,-180,6);
+	glEnd();
+//hair right
+	glColor3f(0,0,0);
+	glBegin(GL_POLYGON);
+	glVertex3f(100,-180.1,21);
+	glVertex3f(100,-180.1,19);
+	glVertex3f(101,-180.1,19);
+	glVertex3f(101.5,-180.1,21);
+	glEnd();
+
+//hair left
+	glColor3f(0,0,0);
+	glBegin(GL_POLYGON);
+	glVertex3f(101.5,-180.1,21);
+	glVertex3f(102,-180.1,19);
+	glVertex3f(103,-180.1,19);
+	glVertex3f(103,-180.1,21);
+	glEnd();
+//skirt
+		glColor3f(1,0,0);
+	glBegin(GL_POLYGON);
+	glVertex3f(97,-180,6);
+	glVertex3f(95,-180,0);
+	glVertex3f(108,-180,0);
+	glVertex3f(106,-180,6);
+	glEnd();
+
+
+
+
+
+}
+
+
+
+//line for academic block
+void func1()
+{			
+			glLineWidth(5);
+			glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(17,-197.5,5);
+				glVertex3f(25,-197.5,5);
+			glEnd();
+			glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(25,-197.5,5);
+				glVertex3f(25,100,5);
+			glEnd();
+			glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(25,100,5);
+				glVertex3f(15,100,5);
+			glEnd();
+			glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(15,100,5);
+				glVertex3f(15,135,5);
+			glEnd();
+			glLineWidth(1.f);
+}
+
+//line for foundry
+void func2()
+{
+		glLineWidth(5);
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(13,-197.5,5);
+				glVertex3f(3,-197.5,5);
+			glEnd();
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(3,-197.5,5);
+				glVertex3f(3,112,5);
+			glEnd();
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(3,112,5);
+				glVertex3f(-85,112,5);
+			glEnd();
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(-85,112,5);
+				glVertex3f(-85,190,5);
+			glEnd();
+			glLineWidth(1.f);
+}
+
+//line for BMSSA 1 block
+void func3()
+{
+		glLineWidth(5);
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(13,-197.5,5);
+				glVertex3f(3,-197.5,5);
+			glEnd();
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(3,-197.5,5);
+				glVertex3f(3,-53,5);
+			glEnd();
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(-190,-53,5);
+				glVertex3f(3,-53,5);
+			glEnd();
+			glLineWidth(1.f);
+}
+
+//line for BMSSA 2 block
+void func4()
+{
+		glLineWidth(5);
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(13,-197.5,5);
+				glVertex3f(3,-197.5,5);
+			glEnd();
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(3,-197.5,5);
+				glVertex3f(3,112,5);
+			glEnd();
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(3,112,5);
+				glVertex3f(-180,112,5);
+			glEnd();
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(-180,112,5);
+				glVertex3f(-180,125,5);
+			glEnd();
+			glLineWidth(1.f);
+}
+
+//line for cafe 
+void func5()
+{
+		glLineWidth(5);
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(13,-197.5,5);
+				glVertex3f(3,-197.5,5);
+			glEnd();
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(3,-197.5,5);
+				glVertex3f(3,-190,5);
+			glEnd();
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(3,-190,5);
+				glVertex3f(-170,-190,5);
+			glEnd();
+			glLineWidth(1.f);
+}
+
+//line BSN block
+void func6()
+{
+		glLineWidth(5);
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(17,-197.5,5);
+				glVertex3f(25,-197.5,5);
+			glEnd();
+			glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(25,-197.5,5);
+				glVertex3f(25,-53,5);
+			glEnd();
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(25,-53,5);
+				glVertex3f(105,-53,5);
+			glEnd();
+			glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(105,-53,5);
+				glVertex3f(105,-15,5);
+			glEnd();
+			glLineWidth(1.f);
+}
+
+//line parking path
+void func7()
+{	
+		glLineWidth(5);
+			glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(17,-197.5,5);
+				glVertex3f(25,-197.5,5);
+			glEnd();
+			glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(25,-197.5,5);
+				glVertex3f(25,-170,5);
+			glEnd();
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(25,-170,5);
+				glVertex3f(200,-170,5);
+			glEnd();
+			glLineWidth(1.f);
+}
+
+//line bank 
+void func8()
+{
+		glLineWidth(5);
+	glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(13,-197.5,5);
+				glVertex3f(3,-197.5,5);
+			glEnd();
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(3,-197.5,5);
+				glVertex3f(3,-100,5);
+			glEnd();
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(3,-100,5);
+				glVertex3f(-180,-100,5);
+			glEnd();
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(-180,-100,5);
+				glVertex3f(-180,-65,5);
+			glEnd();
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(-180,-65,5);
+				glVertex3f(-185,-65,5);
+			glEnd();
+			glLineWidth(1.f);
+
+}
+
+//line for gents hostel
+void func9()
+{
+
+		glLineWidth(5);
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(17,-197.5,5);
+				glVertex3f(25,-197.5,5);
+			glEnd();
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(25,-197.5,5);
+				glVertex3f(25,115,5);
+			glEnd();
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(25,115,5);
+				glVertex3f(115,115,5);
+			glEnd();
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(115,115,5);
+				glVertex3f(115,193,5);
+			glEnd();
+
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(115,193,5);
+				glVertex3f(190,193,5);
+			glEnd();
+			glLineWidth(1.f);
+
+}
+
+//line lab block
+void func10()
+{
+		glLineWidth(5);
+	glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(17,-197.5,5);
+				glVertex3f(25,-197.5,5);
+			glEnd();
+			glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(25,-197.5,5);
+				glVertex3f(25,-53,5);
+			glEnd();
+		glBegin(GL_LINES);
+				glColor3f(1,1,0);
+				glVertex3f(25,-53,5);
+				glVertex3f(180,-53,5);
+			glEnd();
+			glLineWidth(1.f);
+			
+}
+
+
+
+
+//for yellow color dotted lines
+void path(int xmin,int ymin,int xmax,int ymax)
+{
+	glColor3ub(255,255,0);
+	glBegin(GL_POLYGON);
+	glVertex3f(xmin,ymin,2);
+	glVertex3f(xmin,ymax,2);
+	glVertex3f(xmax,ymax,2);
+	glVertex3f(xmax,ymin,2);
+	glEnd();
+}
+
+
+//for all lands and roads location brown colorbase including roads
+void land()
+{
+
+	trees();
+	man1();
+	man2();
+	woman2();
+// light pole 1
+	glColor3f(1,1,1);
+	glBegin(GL_LINES);
+	glVertex3f(15,70,0);
+	glVertex3f(15,70,30);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_LINES);
+	glVertex3f(10,70,30);
+	glVertex3f(20,70,30);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_TRIANGLES);
+	glVertex3f(10,70,30);
+	glVertex3f(12,70,25);
+	glVertex3f(8,70,25);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_TRIANGLES);
+	glVertex3f(20,70,30);
+	glVertex3f(22,70,25);
+	glVertex3f(18,70,25);
+	glEnd();
+
+// light pole 2
+	glColor3f(1,1,1);
+	glBegin(GL_LINES);
+	glVertex3f(15,40,0);
+	glVertex3f(15,40,30);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_LINES);
+	glVertex3f(10,40,30);
+	glVertex3f(20,40,30);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_TRIANGLES);
+	glVertex3f(10,40,30);
+	glVertex3f(12,40,25);
+	glVertex3f(8,40,25);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_TRIANGLES);
+	glVertex3f(20,40,30);
+	glVertex3f(22,40,25);
+	glVertex3f(18,40,25);
+	glEnd();
+
+//divider1
+	glColor3ub(0,100,0);
+	glBegin(GL_POLYGON);
+	glVertex3f(12,30,1.5);
+	glVertex3f(12,80,1.5);
+	glVertex3f(17,80,1.5);
+	glVertex3f(17,30,1.5);
+	glEnd();
+
+// light pole 3
+	glColor3f(1,1,1);
+	glBegin(GL_LINES);
+	glVertex3f(15,10,0);
+	glVertex3f(15,10,30);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_LINES);
+	glVertex3f(10,10,30);
+	glVertex3f(20,10,30);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_TRIANGLES);
+	glVertex3f(10,10,30);
+	glVertex3f(12,10,25);
+	glVertex3f(8,10,25);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_TRIANGLES);
+	glVertex3f(20,10,30);
+	glVertex3f(22,10,25);
+	glVertex3f(18,10,25);
+	glEnd();
+
+// light pole 4
+	glColor3f(1,1,1);
+	glBegin(GL_LINES);
+	glVertex3f(15,-20,0);
+	glVertex3f(15,-20,30);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_LINES);
+	glVertex3f(10,-20,30);
+	glVertex3f(20,-20,30);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_TRIANGLES);
+	glVertex3f(10,-20,30);
+	glVertex3f(12,-20,25);
+	glVertex3f(8,-20,25);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_TRIANGLES);
+	glVertex3f(20,-20,30);
+	glVertex3f(22,-20,25);
+	glVertex3f(18,-20,25);
+	glEnd();
+
+//divider2
+	glColor3ub(0,100,0);
+	glBegin(GL_POLYGON);
+	glVertex3f(12,-30,1.5);
+	glVertex3f(12,20,1.5);
+	glVertex3f(17,20,1.5);
+	glVertex3f(17,-30,1.5);
+	glEnd();
+
+
+	// light pole 5
+	glColor3f(1,1,1);
+	glBegin(GL_LINES);
+	glVertex3f(15,-80,0);
+	glVertex3f(15,-80,30);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_LINES);
+	glVertex3f(10,-80,30);
+	glVertex3f(20,-80,30);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_TRIANGLES);
+	glVertex3f(10,-80,30);
+	glVertex3f(12,-80,25);
+	glVertex3f(8,-80,25);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_TRIANGLES);
+	glVertex3f(20,-80,30);
+	glVertex3f(22,-80,25);
+	glVertex3f(18,-80,25);
+	glEnd();
+
+// light pole 6
+	glColor3f(1,1,1);
+	glBegin(GL_LINES);
+	glVertex3f(15,-110,0);
+	glVertex3f(15,-110,30);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_LINES);
+	glVertex3f(10,-110,30);
+	glVertex3f(20,-110,30);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_TRIANGLES);
+	glVertex3f(10,-110,30);
+	glVertex3f(12,-110,25);
+	glVertex3f(8,-110,25);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_TRIANGLES);
+	glVertex3f(20,-110,30);
+	glVertex3f(22,-110,25);
+	glVertex3f(18,-110,25);
+	glEnd();
+
+//divider3
+	glColor3ub(0,100,0);
+	glBegin(GL_POLYGON);
+	glVertex3f(12,-120,1.5);
+	glVertex3f(12,-70,1.5);
+	glVertex3f(17,-70,1.5);
+	glVertex3f(17,-120,1.5);
+	glEnd();
+
+
+
+	// light pole 7
+	glColor3f(1,1,1);
+	glBegin(GL_LINES);
+	glVertex3f(15,-140,0);
+	glVertex3f(15,-140,30);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_LINES);
+	glVertex3f(10,-140,30);
+	glVertex3f(20,-140,30);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_TRIANGLES);
+	glVertex3f(10,-140,30);
+	glVertex3f(12,-140,25);
+	glVertex3f(8,-140,25);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_TRIANGLES);
+	glVertex3f(20,-140,30);
+	glVertex3f(22,-140,25);
+	glVertex3f(18,-140,25);
+	glEnd();
+
+// light pole 8
+	glColor3f(1,1,1);
+	glBegin(GL_LINES);
+	glVertex3f(15,-170,0);
+	glVertex3f(15,-170,30);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_LINES);
+	glVertex3f(10,-170,30);
+	glVertex3f(20,-170,30);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_TRIANGLES);
+	glVertex3f(10,-170,30);
+	glVertex3f(12,-170,25);
+	glVertex3f(8,-170,25);
+	glEnd();
+
+	glColor3f(1,1,1);
+	glBegin(GL_TRIANGLES);
+	glVertex3f(20,-170,30);
+	glVertex3f(22,-170,25);
+	glVertex3f(18,-170,25);
+	glEnd();
+
+
+//divider4
+	glColor3ub(0,100,0);
+	glBegin(GL_POLYGON);
+	glVertex3f(12,-180,1.5);
+	glVertex3f(12,-130,1.5);
+	glVertex3f(17,-130,1.5);
+	glVertex3f(17,-180,1.5);
+	glEnd();
+
+
+
+//ground for hostels
+	glColor3f(1,0.9,0.9);
+	glBegin(GL_POLYGON);
+	glVertex3f(250,250,1);
+	glVertex3f(250,170,1);
+	glVertex3f(150,170,1);
+	glVertex3f(150,250,1);
+	glEnd();
+
+//ground for foundry 
+	glColor3ub(230,230,250);
+	glBegin(GL_POLYGON);
+	glVertex3f(-100,240,2);
+	glVertex3f(-100,190,2);
+	glVertex3f(-70,190,2);
+	glVertex3f(-70,240,2);
+	glEnd();
+
+
+	///////cricket area color
+	glColor3f(0.8627,0.0784,0.2352);
+	glBegin(GL_POLYGON);
+	glVertex3f(220,150,1.5);
+	glVertex3f(220,80,1.5);
+	glVertex3f(150,80,1.5);
+	glVertex3f(150,150,1.5);
+	glEnd();
+	
+	
+
+	///////playground area color
+	glColor3f(0.8627,0.0784,0.2352);
+	glBegin(GL_POLYGON);
+	glVertex3f(-180,-170,0.1);
+	glVertex3f(-180,-100,.1);
+	glVertex3f(-100,-100,0.1);
+	glVertex3f(-100,-170,0.1);
+	glEnd();
+	
+	///////buses parking area color
+	glColor3f(0.6,0.6,0);
+	glBegin(GL_POLYGON);
+	glVertex3f(-50,-170,.1);
+	glVertex3f(-50,-100,.1);
+	glVertex3f(-5,-100,.1);
+	glVertex3f(-5,-170,.1);
+	glEnd();
+
+
+	///////car and bike parking area color
+	glColor3f(0.8,0.6,0.4);
+	glBegin(GL_POLYGON);
+	glVertex3f(50,-80,.1);
+	glVertex3f(50,-210,.1);
+	glVertex3f(200,-210,.1);
+	glVertex3f(200,-80,.1);
+	glEnd();
+
+
+	///////canteen area color
+	glColor3f(1,0.9,0.9);
+	glBegin(GL_POLYGON);
+	glVertex3f(-230,-220,1);
+	glVertex3f(-230,-105,1);
+	glVertex3f(-170,-105,1);
+	glVertex3f(-170,-220,1);
+	glEnd();
+
+//green color land
+	glColor3f(0,.6,0);
+	glBegin(GL_POLYGON);
+	glVertex3f(-250,-250,0);
+	glVertex3f(250,-250,0);
+	glVertex3f(250,250,0);
+	glVertex3f(-250,250,0);
+	glEnd();
+
+
+
+
+
+
+////main block road
+	glPushMatrix();
+	glTranslated(20,-30,0);
+	glRotated(90,0,0,1);
+	road1(-200,25,0.1,40,400);
+	glPopMatrix();
+
+	/////////////////////////////
+	//hostel road from main block
+	glPushMatrix();
+	glTranslated(20,5,0);
+	glRotated(180,0,0,1);
+	road1(-200,-100,0.1,20,190);	
+	glPopMatrix();
+
+	
+
+
+	/////////////////////////
+	//road to bmssa block 2 from main block
+	glPushMatrix();
+	glTranslated(20,5,0);
+	glRotated(180,0,0,1);
+	road1(20,-100,0.1,20,230);	
+	glPopMatrix();
+
+	
+	
+	//road  yelahanka
+	glPushMatrix();
+	glTranslated(20,5,0);
+	glRotated(180,0,0,1);
+	road1(20,255,0.1,30,250);	
+	glPopMatrix();
+
+
+	//road  dodaballapur
+	glPushMatrix();
+	glTranslated(20,5,0);
+	glRotated(180,0,0,1);
+	road1(-230,255,0.1,30,250);	
+	glPopMatrix();
+
+
+	//road from bsn to main block
+	glPushMatrix();
+	glTranslated(20,-30,0);
+	glRotated(270,0,0,1);
+	road1(-135,80,0.1,9,30);
+	glPopMatrix();
+
+
+	//roadfrom bsn block to lab block
+	glPushMatrix();
+	glTranslated(20,5,0);
+	glRotated(180,0,0,1);
+	road1(-200,70,0.1,25,190);	
+	glPopMatrix();
+
+
+	//road from bmssa block 1 to bsn bllock
+	glPushMatrix();
+	glTranslated(20,5,0);
+	glRotated(180,0,0,1);
+	road1(20,70,0.1,25,230);	
+	glPopMatrix();
+
+
+	//road from bsn block to garden
+	glPushMatrix();
+	glTranslated(20,-30,0);
+	glRotated(270,0,0,1);
+	road1(-20,90,0.1,9,30);
+	glPopMatrix();
+
+
+	//road from canteen to bmssa block1
+	glPushMatrix();
+	glTranslated(20,-30,0);
+	glRotated(270,0,0,1);
+	road1(35,-196,0.1,9,40);
+	glPopMatrix();
+
+
+	//right road complete
+	glPushMatrix();
+	glTranslated(20,-30,0);
+	glRotated(90,0,0,1);
+	road1(-200,-200,0.1,30,400);
+	glPopMatrix();
+
+
+	//left road complete
+	glPushMatrix();
+	glTranslated(20,-30,0);
+	glRotated(90,0,0,1);
+	road1(-200,270,0.1,30,480);
+	glPopMatrix();
+
+	//road to cafe from  gate
+	glPushMatrix();
+	glTranslated(20,5,0);
+	glRotated(180,0,0,1);
+	road1(0,200,0.1,10,190);	
+	glPopMatrix();
+
+
+	//road to bank from  gate
+	glPushMatrix();
+	glTranslated(20,5,0);
+	glRotated(180,0,0,1);
+	road1(0,110,0.1,10,200);	
+	glPopMatrix();
+
+	//road car/ bike paring
+	glPushMatrix();
+	glTranslated(20,5,0);
+	glRotated(180,0,0,1);
+	road1(-200,180,.1,10,200);	
+	glPopMatrix();
+
+	//vertical road to hostel
+	glPushMatrix();
+	glTranslated(20,-30,0);
+	glRotated(270,0,0,1);
+	road1(-225,100,0.1,9,70);
+	glPopMatrix();
+
+
+	//horizontal road to hostel
+	glPushMatrix();
+	glTranslated(20,5,0);
+	glRotated(180,0,0,1);
+	road1(-130,-180,.1,15,39);	
+	glPopMatrix();
+
+	//road to foundary
+	glPushMatrix();
+	glTranslated(20,-30,0);
+	glRotated(270,0,0,1);
+	road1(-225,-100,0.1,9,70);
+	glPopMatrix();
+
+//road from bmssa block to foundary
+	glPushMatrix();
+	glTranslated(20,-30,0);
+	glRotated(270,0,0,1);
+	road1(10,-196,0.1,9,-200);
+	glPopMatrix();
+
+//for gate1
+	glPushMatrix();
+	glColor3f(0,0,1);
+	glBegin(GL_LINES);
+	glVertex3f(-3,-220,0);
+	glVertex3f(-3,-220,30);
+	glEnd();
+
+
+	glBegin(GL_LINES);
+	glVertex3f(0,-220,0);
+	glVertex3f(0,-220,30);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(3,-220,0);
+	glVertex3f(3,-220,30);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(6,-220,0);
+	glVertex3f(6,-220,30);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(9,-220,0);
+	glVertex3f(9,-220,30);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(12,-220,0);
+	glVertex3f(12,-220,30);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(15,-220,0);
+	glVertex3f(15,-220,30);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(18,-220,0);
+	glVertex3f(18,-220,30);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(21,-220,0);
+	glVertex3f(21,-220,30);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(24,-220,0);
+	glVertex3f(24,-220,30);
+	glEnd();
+
+		glBegin(GL_LINES);
+	glVertex3f(27,-220,0);
+	glVertex3f(27,-220,30);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(30,-220,0);
+	glVertex3f(30,-220,30);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(34,-220,0);
+	glVertex3f(34,-220,30);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(-3,-220,30);
+	glVertex3f(34,-220,30);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(-3,-220,2);
+	glVertex3f(34,-220,2);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(-3,-220,15);
+	glVertex3f(34,-220,15);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(-3,-220,30);
+	glVertex3f(34,-220,0);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(-3,-220,0);
+	glVertex3f(34,-220,30);
+	glEnd();
+
+//for gate 2
+
+	glBegin(GL_LINES);
+	glVertex3f(223,-220,0);
+	glVertex3f(223,-220,30);
+	glEnd();
+
+	
+	glBegin(GL_LINES);
+	glVertex3f(226,-220,0);
+	glVertex3f(226,-220,30);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(229,-220,0);
+	glVertex3f(229,-220,30);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(232,-220,0);
+	glVertex3f(232,-220,30);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(9,-220,0);
+	glVertex3f(9,-220,30);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(235,-220,0);
+	glVertex3f(235,-220,30);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(238,-220,0);
+	glVertex3f(238,-220,30);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(241,-220,0);
+	glVertex3f(241,-220,30);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(244,-220,0);
+	glVertex3f(244,-220,30);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(247,-220,0);
+	glVertex3f(247,-220,30);
+	glEnd();
+
+		glBegin(GL_LINES);
+	glVertex3f(250,-220,0);
+	glVertex3f(250,-220,30);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(223,-220,30);
+	glVertex3f(250,-220,30);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(223,-220,15);
+	glVertex3f(250,-220,15);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(223,-220,0);
+	glVertex3f(250,-220,30);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glVertex3f(223,-220,30);
+	glVertex3f(250,-220,0);
+	glEnd();
+
+
+
+
+
+	glPopMatrix();
+	
+}
+
+
+//to draw the roads color effect
+void road1(float x,float y,float z,float h,float w)
+{
+	
+	glColor3f(0,0,0);
+	glBegin(GL_POLYGON);
+	glVertex3f(x,y,z);
+	glVertex3f(x,y-h,z);
+	glVertex3f(x+w,y-h,z);
+	glVertex3f(x+w,y,z);
+	glEnd();
+
+	glColor3f(0.3,0.3,0.3);
+	glBegin(GL_POLYGON);
+	glVertex3f(x,y-1,z+1);
+	glVertex3f(x,y-h+1,z+1);
+	glVertex3f(x+w,y-h+1,z+1);
+	glVertex3f(x+w,y-1,z+1);
+	glEnd();
+
+	glColor3f(0,0,0);
+	glBegin(GL_POLYGON);
+	glVertex3f(x,y,z);
+	glVertex3f(x,y-1,z+1);
+	glVertex3f(x+w,y-1,z+1);
+	glVertex3f(x+w,y,z);
+	glEnd();
+
+	glColor3f(0,0,0);
+	glBegin(GL_POLYGON);
+	glVertex3f(x,y-h,z);
+	glVertex3f(x,y-h+1,z+1);
+	glVertex3f(x+w,y-h+1,z+1);
+	glVertex3f(x+w,y-h,z);
+
+	glEnd();
+}
+
+
+//for cafeteria
+void house(float x,float y,float z)
+{
+	glColor3f(0.01,0.05,0.3);
+	glBegin(GL_POLYGON);
+	glVertex3f(x,y,z);
+	glVertex3f(x,y,z+30);
+	glVertex3f(x,y+15,z+30);
+	glVertex3f(x,y+15,z);
+	glEnd();
+
+	glColor3f(0.01,0.05,0.3);
+	glBegin(GL_POLYGON);
+	glVertex3f(x-15,y,z);
+	glVertex3f(x-15,y+15,z);
+	glVertex3f(x-15,y+15,z+30);
+	glVertex3f(x-15,y,z+30);
+	glEnd();
+
+	glColor3f(0.01,0.05,0.3);
+	glBegin(GL_POLYGON);
+	glVertex3f(x,y,z+30);
+	glVertex3f(x-15,y,z+30);
+	glVertex3f(x-15,y+15,z+30);
+	glVertex3f(x,y+15,z+30);
+	glEnd();
+
+	glColor3f(0.01,0.05,0.3);
+	glBegin(GL_POLYGON);
+	glVertex3f(x-15,y,z);
+	glVertex3f(x-15,y+15,z);
+	glVertex3f(x,y+15,z);
+	glVertex3f(x,y,z);
+	glEnd();
+
+	glColor3f(0.01,0.05,1.5);
+	glBegin(GL_POLYGON);
+	glVertex3f(x-15,y,z);
+	glVertex3f(x,y,z);
+	glVertex3f(x,y,z+30);
+	glVertex3f(x-15,y,z+30);
+	glEnd();
+
+
+	glColor3f(0.51,0.015,0.008);
+	glBegin(GL_POLYGON);
+	glVertex3f(x+1.69*3,y+3.5*3,z);
+	glVertex3f(x-2.5*3,y+7.5*3,z);
+	glVertex3f(x-2.5*3,y+7.5*3,z+30);
+	glVertex3f(x+1.69*3,y+3.5*3,z+30);
+	glEnd();
+
+
+	glColor3f(0.51,0.015,0.008);
+	glBegin(GL_POLYGON);
+	glVertex3f(x-6.69*3,y+3.5*3,z);
+	glVertex3f(x-6.69*3,y+3.5*3,z+30);
+	glVertex3f(x-2.5*3,y+7.5*3,z+30);
+	glVertex3f(x-2.5*3,y+7.5*3,z);
+	glEnd();
+
+
+glColor3f(0.1,0.015,0.13);
+	glBegin(GL_POLYGON);
+	glVertex3f(x,y+15,z);
+	glVertex3f(x-15,y+5,z);
+	glVertex3f(x-2.5*3,y+7.5*3,z);
+	glEnd();
+
+glColor3f(0.1,0.015,0.13);
+	glBegin(GL_POLYGON);
+	glVertex3f(x,y+15,z+30);
+	glVertex3f(x-15,y+15,z+30);
+	glVertex3f(x-2.5*3,y+7.5*3,z+30);
+	glEnd();
+}
+
+void apart(float x,float y,float z)
+{
+	int i;
+	
+/////////////back side of apartment
+
+	glColor3f(0.6,0.6,0.6);
+	
+	glBegin(GL_POLYGON);
+	glVertex3f(x,y,z+0.5);
+	glVertex3f(x+45,y,z+0.5);
+	glVertex3f(x+45,y+100,z+0.5);
+ 	glVertex3f(x,y+100,z+0.5);
+	glEnd(); 
+
+	
+	glColor3f(0.8,0.8,0.8);
+	for(j=0;j<8;j++)
+	{
+		glPushMatrix();
+		glTranslatef(0,-12*j,0);
+		for(i=0;i<4;i++)
+		{
+			glPushMatrix();
+			glTranslatef(11*i,0,0);
+			
+			glBegin(GL_POLYGON);
+			glVertex3f(x+2,y+98,z);
+			glVertex3f(x+10,y+98,z);
+			glVertex3f(x+10,y+88,z);
+ 			glVertex3f(x+2,y+88,z);
+			glEnd(); 
+			
+			glPopMatrix();
+		}
+		glPopMatrix();
+	}
+	
+
+	
+	glColor3f(0,0,0);
+	for(j=0;j<8;j++)
+	{
+		glPushMatrix();
+		glTranslatef(0,-12*j,0);
+		for(i=0;i<4;i++)
+		{
+			glPushMatrix();
+			glTranslatef(11*i,0,0);
+			
+			glBegin(GL_LINE_LOOP);
+			glVertex3f(x+2,y+98,z);
+			glVertex3f(x+10,y+98,z);
+			glVertex3f(x+10,y+88,z);
+ 			glVertex3f(x+2,y+88,z);
+			glEnd(); 
+	
+			glPopMatrix();
+		}
+		glPopMatrix();
+	}
+
+
+/////////////////////////// front side of apartment
+	glColor3f(0.6,0.6,0.6);
+	
+	glBegin(GL_POLYGON);
+	glVertex3f(x,y,z+45-0.5);
+	glVertex3f(x+45,y,z+45-0.5);
+	glVertex3f(x+45,y+100,z+45-0.5);
+ 	glVertex3f(x,y+100,z+45-0.5);
+	glEnd();  
+	
+	
+	glColor3f(0.8,0.8,0.8);
+	for(j=0;j<8;j++)
+	{
+
+		glPushMatrix();
+		glTranslatef(0,-12*j,0);
+		for(i=0;i<4;i++)
+		{
+			glPushMatrix();
+			glTranslatef(11*i,0,0);
+	
+			glBegin(GL_POLYGON);
+			glVertex3f(x+2,y+98,z+45);
+			glVertex3f(x+10,y+98,z+45);
+			glVertex3f(x+10,y+88,z+45);
+ 			glVertex3f(x+2,y+88,z+45);
+			glEnd(); 
+
+			glPopMatrix();
+		}
+		glPopMatrix();
+	}
+	
+	
+	glColor3f(0,0,0);
+	for(j=0;j<8;j++)
+	{
+		glPushMatrix();
+		glTranslatef(0,-12*j,0);
+		for(i=0;i<4;i++)
+		{
+			glPushMatrix();
+			glTranslatef(11*i,0,0);
+	
+			glBegin(GL_LINE_LOOP);
+			glVertex3f(x+2,y+98,z+45);
+			glVertex3f(x+10,y+98,z+45);
+			glVertex3f(x+10,y+88,z+45);
+ 			glVertex3f(x+2,y+88,z+45);
+			glEnd(); 
+			
+			glPopMatrix();
+		}
+		glPopMatrix();
+	}
+/////////////////////////// left side of apartment
+
+	glColor3f(0.6,0.6,0.6);
+	glBegin(GL_POLYGON);
+	glVertex3f(x+0.5,y,z);
+	glVertex3f(x+0.5,y,z+45);
+	glVertex3f(x+0.5,y+100,z+45);
+ 	glVertex3f(x+0.5,y+100,z);
+	glEnd(); 
+	
+	
+	glColor3f(0.8,0.8,0.8);
+	for(j=0;j<8;j++)
+	{
+
+		glPushMatrix();
+		glTranslatef(0,-12*j,0);
+		for(i=0;i<4;i++)
+		{
+			glPushMatrix();
+			glTranslatef(0,0,11*i);
+	
+			glBegin(GL_POLYGON);
+			glVertex3f(x,y+98,z+2);
+			glVertex3f(x,y+98,z+10);
+			glVertex3f(x,y+88,z+10);
+ 			glVertex3f(x,y+88,z+2);
+			glEnd(); 
+
+	   	glPopMatrix();
+		}
+		
+		glPopMatrix();
+	}
+	
+	
+	glColor3f(0,0,0);
+	for(j=0;j<8;j++)
+	{
+
+		glPushMatrix();
+		glTranslatef(0,-12*j,0);
+		for(i=0;i<4;i++)
+		{
+			glPushMatrix();
+			glTranslatef(0,0,11*i);
+		
+			glBegin(GL_LINE_LOOP);
+		glVertex3f(x,y+98,z+2);
+		glVertex3f(x,y+98,z+10);
+		glVertex3f(x,y+88,z+10);
+ 		glVertex3f(x,y+88,z+2);
+		glEnd();
+		
+		glPopMatrix();
+		}
+		glPopMatrix();
+	}
+///////////////////////////right side of appartment
+	glColor3f(0.6,0.6,0.6);
+
+	glBegin(GL_POLYGON);
+	glVertex3f(x+45-0.5,y,z-0.5);
+	glVertex3f(x+45-0.5,y,z+45-0.5);
+	glVertex3f(x+45-0.5,y+100,z+45-0.5);
+ 	glVertex3f(x+45-0.5,y+100,z-0.5);
+	glEnd(); 
+	
+//white color glasses	
+	glColor3f(0.8,0.8,0.8); 
+	for(j=0;j<8;j++)
+	{	
+
+		glPushMatrix();
+		glTranslatef(0,-12*j,0);
+		for(i=0;i<4;i++)
+		{
+			glPushMatrix();
+			glTranslatef(0,0,11*i);
+	
+			glBegin(GL_POLYGON);
+		glVertex3f(x+45,y+98,z+2);
+		glVertex3f(x+45,y+98,z+10);
+		glVertex3f(x+45,y+88,z+10);
+ 		glVertex3f(x+45,y+88,z+2);
+		glEnd(); 
+		
+		glPopMatrix();
+		}
+		glPopMatrix();
+	}
+
+//border for white glass	
+	glColor3f(0,0,0); 
+	for(j=0;j<8;j++)
+	{
+
+		glPushMatrix();
+		glTranslatef(0,-12*j,0);
+		for(i=0;i<4;i++)
+		{
+			glPushMatrix();
+			glTranslatef(0,0,11*i);
+		
+			glBegin(GL_LINE_LOOP);
+			glVertex3f(x+45,y+98,z+2);
+			glVertex3f(x+45,y+98,z+10);
+			glVertex3f(x+45,y+88,z+10);
+ 			glVertex3f(x+45,y+88,z+2);
+			glEnd(); 
+	
+			glPopMatrix();
+		}
+		glPopMatrix();
+	}
+
+	glColor3f(0.5,0.5,0.5);
+	glBegin(GL_POLYGON);
+	glVertex3f(x,y,z-0.5);
+	glVertex3f(x+45,y,z-0.5);
+	glVertex3f(x+45,y,z+45-0.5);
+ 	glVertex3f(x,y,z+45-0.5);
+	glEnd();  
+	
+	glBegin(GL_POLYGON);
+	glVertex3f(x,y+100,z);
+	glVertex3f(x+45,y+100,z);
+	glVertex3f(x+45,y+100,z+45);
+ 	glVertex3f(x,y+100,z+45);
+	glEnd(); 
+}
+
+
+
+//drawing white apartments at once by calling house function
+
+void house1()
+{
+	//canteen hut 1
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	house(-200,0.1,160);
+	glPopMatrix();
+
+
+    //canteen hut 2
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	house(-180,0.1,140);
+	glPopMatrix();
+
+
+	//main block start
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(-8,0,-180);
+
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(-50,0,-190);
+
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(35,0,-190);
+
+
+
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(-60,0,-230);
+
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(45,0,-230);//main block end
+
+
+
+	//BSNblock start
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(70,0,-75);
+	
+	
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(95,0,-75);
+
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(70,0,-30);
+	
+	
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(95,0,-30);//bsn block end
+
+//bmssa block 1 start
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(-230,0,-60);
+
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(-230,0,-15);
+	
+	
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(-230,0,25);//bmssa block 1 end
+
+
+
+
+	//bmssa block 2 start
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(-230,0,-250);
+
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(-230,0,-210);
+	
+	
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(-230,0,-170);
+	
+	
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(-190,0,-250);
+
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(-190,0,-210);
+	
+	
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(-190,0,-170);   //bmssa block 2 end
+
+
+	//hostel start
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(200,0,-250);
+	
+	
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(150,0,-220);//end of hostel
+
+	//lab block start
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(160,0,-50);
+	
+	
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(175,0,-10);
+
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(175,0,30);
+	
+	
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(175,0,60);
+
+	glPopMatrix();
+	glPushMatrix();
+	glRotated(90,1,0,0);
+	apart(160,0,90);//lab block end
+
+
+
+	
+
+	glPopMatrix();
+
+}
+
+void intro()
+{
+	glColor3ub(0,255,255);
+glBegin(GL_POLYGON);
+      	glVertex2i(0,50);
+	  	glVertex2i(250,50);
+      	glVertex2i(250,250);
+        glVertex2i(0,250);
+glEnd();
+
+glColor3ub(255,0,255);
+glBegin(GL_POLYGON);
+      	glVertex2i(0,50);
+	  	glVertex2i(0,250);
+      	glVertex2i(-250,250);
+        glVertex2i(-250,50);
+glEnd();
+
+
+
+glColor3ub(124,252,0);
+glBegin(GL_POLYGON);
+      	glVertex2i(-250,50);
+	  	glVertex2i(-250,-250);
+      	glVertex2i(100,-250);
+        glVertex2i(100,50);
+glEnd();
+
+glColor3ub(255,255,0);
+glBegin(GL_POLYGON);
+      	glVertex2i(100,50);
+	  	glVertex2i(100,-250);
+      	glVertex2i(250,-250);
+        glVertex2i(250,50);
+glEnd();
+
+}
+
+void texti()
+{
+
+	glColor3f(0,0,0);
+glRasterPos3f(-110,230,5.0);
+for(fi=0;fi<strlen(s1);fi++)
+glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, s1[fi]);
+
+
+glColor3f(0,0,0);
+glRasterPos3f(-120,175,5.0);
+for(fj=0;fj<strlen(s2);fj++)
+glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, s2[fj]);
+
+
+glColor3f(0,0,0);
+glRasterPos3f(-80,85,5.0);
+for(fk=0;fk<strlen(s3);fk++)
+glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, s3[fk]);
+
+
+glColor3f(0,0,0);
+glRasterPos3f(-55,15,5.0);
+for(fl=0;fl<strlen(s4);fl++)
+glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, s4[fl]);
+
+
+glColor3f(0,0,0);
+glRasterPos3f(-220,-55,5.0);
+for(fm=0;fm<strlen(s5);fm++)
+glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, s5[fm]);
+
+
+glColor3f(0,0,0);
+glRasterPos3f(-220,-80,5.0);
+for(fa=0;fa<strlen(s13);fa++)
+glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, s13[fa]);
+
+
+glColor3f(0,0,0);
+glRasterPos3f(-220,-100,5.0);
+for(ft=0;ft<strlen(s14);ft++)
+glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, s14[ft]);
+
+
+glColor3f(0,0,0);
+glRasterPos3f(80,-55,5.0);
+for(fc=0;fc<strlen(s15);fc++)
+glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, s15[fc]);
+
+
+glColor3f(0,0,0);
+glRasterPos3f(140,-80,5.0);
+for(fu=0;fu<strlen(s7);fu++)
+glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, s7[fu]);
+
+
+
+glColor3f(0,0,0);
+glRasterPos3f(140,-100,5.0);
+for(fd=0;fd<strlen(s16);fd++)
+glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, s16[fd]);
+
+
+glColor3f(0,0,0);
+glRasterPos3f(-50,-180,5.0);
+for(ff=0;ff<strlen(s18);ff++)
+glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, s18[ff]);
+
+}
+void helptxt()
+{
+
+	
+glColor3f(0,0,0);
+glRasterPos3f(-100,140,50.0);
+for(fm=0;fm<strlen(s26);fm++)
+glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, s26[fm]);
+
+	glColor3f(0,0,0);
+glRasterPos3f(-100,100,5.0);
+for(fi=0;fi<strlen(s21);fi++)
+glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, s21[fi]);
+
+
+glColor3f(0,0,0);
+glRasterPos3f(-100,70,5.0);
+for(fj=0;fj<strlen(s22);fj++)
+glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, s22[fj]);
+
+
+glColor3f(0,0,0);
+glRasterPos3f(-100,40,5.0);
+for(fk=0;fk<strlen(s23);fk++)
+glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, s23[fk]);
+
+
+glColor3f(0,0,0);
+glRasterPos3f(-100,10,5.0);
+for(fl=0;fl<strlen(s24);fl++)
+glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, s24[fl]);
+
+
+glColor3f(0,0,0);
+glRasterPos3f(-100,-20,5.0);
+for(fl=0;fl<strlen(s27);fl++)
+glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, s27[fl]);
+
+
+
+glColor3f(0,0,0);
+glRasterPos3f(-50,-180,5.0);
+for(fm=0;fm<strlen(s25);fm++)
+glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, s25[fm]);
+
+
+}
+
+void display()
+{
+	
+	glClearColor(1.0, 1, 1.0, 1.0);
+	glClear( GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
+
+	if(then==0)
+    {
+		intro();
+	    texti();
+	}
+	if(then==1)
+	{
+		glClearColor(1.0, 1, 1.0, 1.0);
+		glClear( GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
+		intro();
+		helptxt();
+	}
+
+	if(then==1 && help==1)
+	{
+
+		glClearColor(0.1176, 0.5647, 1.0, 1.0);
+		glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
+		glPointSize(10);
+		house1();
+    
+		glPushMatrix();
+			glRotated(180,0,1,0);
+			glScaled(0.5,5,0.1);
+		glTranslated(-1,20,-17);	
+		glPopMatrix();
+	
+		glPushMatrix();
+		land();
+		glPopMatrix();
+		
+		aa=0;bb=0;cc=0;
+		float a[3]={-30,30,25},b[3]={30,30,25},c[3]={30,-30,25},d[3]={-30,-30,25};
+		glPushMatrix();	
+		glPopMatrix();
+	
+	}
+	if(then==1 && help==1 && navi==1)
+	{
+		glClearColor(0.1176, 0.5647, 1.0, 1.0);
+		glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
+		glPointSize(10);
+		house1();
+    
+		glPushMatrix();
+			glRotated(180,0,1,0);
+			glScaled(0.5,5,0.1);
+		glTranslated(-1,20,-17);	
+		glPopMatrix();
+	
+		glPushMatrix();
+		land();
+		glPopMatrix();
+
+
+		aa=0;bb=0;cc=0;
+		float a[3]={-30,30,25},b[3]={30,30,25},c[3]={30,-30,25},d[3]={-30,-30,25};
+		glPushMatrix();	
+		glPopMatrix();
+
+		glPushMatrix();
+		path(13,-200,17,-195);
+		glPopMatrix();
+			
+		if(academic==1)
+		{
+			func1();
+		}
+		if(account==1)
+		{
+			func1();
+		}
+		if(admin==1)
+		{
+			func1();
+		}
+		if(bank==1)
+		{
+			func8();
+					
+		}
+		if(amphi==1)
+		{
+			func1();
+		}
+		if(science==1)
+		{
+			func6();
+					
+		}
+		if(bmssa1==1)
+		{
+			func3();
+		}
+		if(bmssa2==1)
+		{
+			func4();
+		}
+		if(bsn==1)
+		{
+			func6();
+		}
+		if(cafe==1)
+		{
+			func5();
+					
+		}
+		if(civil==1)
+		{
+			func6();
+			
+		}
+		if(cse==1)
+		{
+			func6();	
+		}
+		if(ece==1)
+		{
+			func1();
+		}
+		if(found==1)
+		{
+			func2();
+		}
+		if(hostel==1)
+		{
+			func9();
+			
+		}
+		if(gym==1)
+		{
+			func6();;
+					
+		}
+		if(ise==1)
+		{
+		func6();
+			
+		}
+		if(lab==1)
+		{
+		func10();
+					
+		}
+		if(lib==1)
+		{
+			func6();
+			
+		}
+		if(mca==1)
+		{
+			func6();
+					
+		}
+		if(park==1)
+		{
+			func7();
+			
+		}
+		if(plac==1)
+		{
+			func1();
+		}
+		if(princi==1)
+		{
+			func1();
+		}
+	}
+
+
+	glFlush();
+
+	glutSwapBuffers();
+}
+
+void myMenu(int id)
+{
+	switch(id)
+	{
+		case 1: academic=1,account=0,admin=0,bank=0,amphi=0,science=0,bmssa1=0,bmssa2=0,bsn=0,cafe=0,civil=0,cse=0,
+				ece=0,found=0,hostel=0,gym=0,ise=0,lab=0,lib=0,mca=0,park=0,plac=0,princi=0;
+				glutPostRedisplay();
+				break;
+		case 2:	academic=0,account=1,admin=0,bank=0,amphi=0,science=0,bmssa1=0,bmssa2=0,bsn=0,cafe=0,civil=0,cse=0,
+				ece=0,found=0,hostel=0,gym=0,ise=0,lab=0,lib=0,mca=0,park=0,plac=0,princi=0;
+				glutPostRedisplay();
+			break;
+		case 3:academic=0,account=0,admin=1,bank=0,amphi=0,science=0,bmssa1=0,bmssa2=0,bsn=0,cafe=0,civil=0,cse=0,
+				ece=0,found=0,hostel=0,gym=0,ise=0,lab=0,lib=0,mca=0,park=0,plac=0,princi=0;
+				glutPostRedisplay();
+			break;
+		case 4:academic=0,account=0,admin=0,bank=1,amphi=0,science=0,bmssa1=0,bmssa2=0,bsn=0,cafe=0,civil=0,cse=0,
+				ece=0,found=0,hostel=0,gym=0,ise=0,lab=0,lib=0,mca=0,park=0,plac=0,princi=0;
+				glutPostRedisplay();
+			break;
+		case 5:academic=0,account=0,admin=0,bank=0,amphi=1,science=0,bmssa1=0,bmssa2=0,bsn=0,cafe=0,civil=0,cse=0,
+				ece=0,found=0,hostel=0,gym=0,ise=0,lab=0,lib=0,mca=0,park=0,plac=0,princi=0;
+				glutPostRedisplay();
+			break;
+		case 6:academic=0,account=0,admin=0,bank=0,amphi=0,science=1,bmssa1=0,bmssa2=0,bsn=0,cafe=0,civil=0,cse=0,
+				ece=0,found=0,hostel=0,gym=0,ise=0,lab=0,lib=0,mca=0,park=0,plac=0,princi=0;
+				glutPostRedisplay();
+			break;
+		case 7:academic=0,account=0,admin=0,bank=0,amphi=0,science=0,bmssa1=1,bmssa2=0,bsn=0,cafe=0,civil=0,cse=0,
+				ece=0,found=0,hostel=0,gym=0,ise=0,lab=0,lib=0,mca=0,park=0,plac=0,princi=0;
+				glutPostRedisplay();
+			break;
+		case 8:academic=0,account=0,admin=0,bank=0,amphi=0,science=0,bmssa1=0,bmssa2=1,bsn=0,cafe=0,civil=0,cse=0,
+				ece=0,found=0,hostel=0,gym=0,ise=0,lab=0,lib=0,mca=0,park=0,plac=0,princi=0;
+				glutPostRedisplay();
+			break;
+		case 9: academic=0,account=0,admin=0,bank=0,amphi=0,science=0,bmssa1=0,bmssa2=0,bsn=1,cafe=0,civil=0,cse=0,
+				ece=0,found=0,hostel=0,gym=0,ise=0,lab=0,lib=0,mca=0,park=0,plac=0,princi=0;
+				glutPostRedisplay();						   
+			break;
+		case 10:academic=0,account=0,admin=0,bank=0,amphi=0,science=0,bmssa1=0,bmssa2=0,bsn=0,cafe=1,civil=0,cse=0,
+				ece=0,found=0,hostel=0,gym=0,ise=0,lab=0,lib=0,mca=0,park=0,plac=0,princi=0;
+				glutPostRedisplay();
+			break;
+		case 11:academic=0,account=0,admin=0,bank=0,amphi=0,science=0,bmssa1=0,bmssa2=0,bsn=0,cafe=0,civil=1,cse=0,
+				ece=0,found=0,hostel=0,gym=0,ise=0,lab=0,lib=0,mca=0,park=0,plac=0,princi=0;
+				glutPostRedisplay();
+			break;
+		case 12:academic=0,account=0,admin=0,bank=0,amphi=0,science=0,bmssa1=0,bmssa2=0,bsn=0,cafe=0,civil=0,cse=1,
+				ece=0,found=0,hostel=0,gym=0,ise=0,lab=0,lib=0,mca=0,park=0,plac=0,princi=0;
+				glutPostRedisplay();
+			break;
+		case 13:academic=0,account=0,admin=0,bank=0,amphi=0,science=0,bmssa1=0,bmssa2=0,bsn=0,cafe=0,civil=0,cse=0,
+				ece=1,found=0,hostel=0,gym=0,ise=0,lab=0,lib=0,mca=0,park=0,plac=0,princi=0;
+				glutPostRedisplay();
+			break;
+		case 14:academic=0,account=0,admin=0,bank=0,amphi=0,science=0,bmssa1=0,bmssa2=0,bsn=0,cafe=0,civil=0,cse=0,
+				ece=0,found=1,hostel=0,gym=0,ise=0,lab=0,lib=0,mca=0,park=0,plac=0,princi=0;
+				glutPostRedisplay();
+			break;
+		case 15:academic=0,account=0,admin=0,bank=0,amphi=0,science=0,bmssa1=0,bmssa2=0,bsn=0,cafe=0,civil=0,cse=0,
+				ece=0,found=0,hostel=1,gym=0,ise=0,lab=0,lib=0,mca=0,park=0,plac=0,princi=0;
+				glutPostRedisplay();
+			break;
+		case 16:academic=0,account=0,admin=0,bank=0,amphi=0,science=0,bmssa1=0,bmssa2=0,bsn=0,cafe=0,civil=0,cse=0,
+				ece=0,found=0,hostel=0,gym=1,ise=0,lab=0,lib=0,mca=0,park=0,plac=0,princi=0;
+				glutPostRedisplay();
+			break;
+		case 17:academic=0,account=0,admin=0,bank=0,amphi=0,science=0,bmssa1=0,bmssa2=0,bsn=0,cafe=0,civil=0,cse=0,
+				ece=0,found=0,hostel=0,gym=0,ise=1,lab=0,lib=0,mca=0,park=0,plac=0,princi=0;
+				glutPostRedisplay();
+			break;
+		case 18:academic=0,account=0,admin=0,bank=0,amphi=0,science=0,bmssa1=0,bmssa2=0,bsn=0,cafe=0,civil=0,cse=0,
+				ece=0,found=0,hostel=0,gym=0,ise=0,lab=1,lib=0,mca=0,park=0,plac=0,princi=0;
+				glutPostRedisplay();
+			break;
+		case 19:academic=0,account=0,admin=0,bank=0,amphi=0,science=0,bmssa1=0,bmssa2=0,bsn=0,cafe=0,civil=0,cse=0,
+				ece=0,found=0,hostel=0,gym=0,ise=0,lab=0,lib=1,mca=0,park=0,plac=0,princi=0;
+				glutPostRedisplay();
+			break;
+		case 20:academic=0,account=0,admin=0,bank=0,amphi=0,science=0,bmssa1=0,bmssa2=0,bsn=0,cafe=0,civil=0,cse=0,
+				ece=0,found=0,hostel=0,gym=0,ise=0,lab=0,lib=0,mca=1,park=0,plac=0,princi=0;
+				glutPostRedisplay();
+			break;
+		case 21:academic=0,account=0,admin=0,bank=0,amphi=0,science=0,bmssa1=0,bmssa2=0,bsn=0,cafe=0,civil=0,cse=0,
+				ece=0,found=0,hostel=0,gym=0,ise=0,lab=0,lib=0,mca=0,park=1,plac=0,princi=0;
+				glutPostRedisplay();
+			break;
+		case 22:academic=0,account=0,admin=0,bank=0,amphi=0,science=0,bmssa1=0,bmssa2=0,bsn=0,cafe=0,civil=0,cse=0,
+				ece=0,found=0,hostel=0,gym=0,ise=0,lab=0,lib=0,mca=0,park=0,plac=1,princi=0;
+				glutPostRedisplay();
+			break;
+		case 23:academic=0,account=0,admin=0,bank=0,amphi=0,science=0,bmssa1=0,bmssa2=0,bsn=0,cafe=0,civil=0,cse=0,
+				ece=0,found=0,hostel=0,gym=0,ise=0,lab=0,lib=0,mca=0,park=0,plac=0,princi=1;
+				glutPostRedisplay();
+			break;
+		case 24:
+				exit(0);
+	}
+}
+
+void myReshape(int w, int h)
+{
+	glViewport(0, 0, w, h);
+	glMatrixMode(GL_PROJECTION); 
+	glLoadIdentity();
+	if(w<=h) 
+		glFrustum(-250.0, 250.0, -250.0 * (GLfloat) h/ (GLfloat) w, 250.0* (GLfloat) h / (GLfloat) w, 150.0, 400.0);
+	else 
+		glFrustum(-250.0, 250.0, -250.0 * (GLfloat) w/ (GLfloat) h, 250.0* (GLfloat) w / (GLfloat) h, 150.0, 400.0);
+	glMatrixMode(GL_MODELVIEW);
+}
+
+
+void keyboard(unsigned char k,int x,int y)
+{
+
+	if(k=='s'){then=1; glutPostRedisplay();}
+	if(k=='v'){help=1; glutPostRedisplay();}
+	if(k == 'x'){glRotatef(10,1,0,0);glutPostRedisplay();}
+   if(k == 'y'){glRotatef(10,0,1,0);glutPostRedisplay();}
+   if(k == 'z'){glRotatef(10,0,0,1);glutPostRedisplay();}
+
+   if(k=='n'){navi=1; glutPostRedisplay();}
+   display();
+   if(k == 'X'){glRotatef(-10,1,0,0);glutPostRedisplay();}
+   if(k == 'Y'){glRotatef(-10,0,1,0);glutPostRedisplay();}
+   if(k == 'Z'){glRotatef(-10,0,0,1);glutPostRedisplay();}
+
+}
+
+void init()
+{
+	glClearColor(0.2,0.6,0.8,0);
+	glOrtho(-250,250,-250,250,-500,500);
+	
+}
+void main(int argc,char **argv)
+
+{
+	glutInit(&argc,argv);
+	glutInitWindowSize(1500,900);
+	glutInitDisplayMode(GLUT_RGBA|GLUT_DEPTH|GLUT_ACCUM|GLUT_DOUBLE);
+	glutCreateWindow("route map");
+	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_LINE_SMOOTH);
+	glutDisplayFunc(display);
+	init();
+	glutDisplayFunc(display);
+    glutPostRedisplay();
+	glFlush();
+	glutKeyboardFunc(keyboard);
+	glutCreateMenu(myMenu);
+	glutAddMenuEntry("Academic Block", 1);
+	glutAddMenuEntry("Account Section - 1st Floor", 2);
+	glutAddMenuEntry("Administration Office - G Floor",3);
+	glutAddMenuEntry("Allahabad Bank - G Floor",4);
+	glutAddMenuEntry("Amphitheater",5);
+	glutAddMenuEntry("Basic Science Dept - Basement",6);
+	glutAddMenuEntry("BMSSA Block 1",7);
+	glutAddMenuEntry("BMSSA Block 2",8);
+	glutAddMenuEntry("BSN Block",9);
+	glutAddMenuEntry("Cafeteria",10);
+	glutAddMenuEntry("Civil Engg Dept - 5th Floor",11);
+	glutAddMenuEntry("CSE Dept- 4th Floor",12);
+	glutAddMenuEntry("ECE,TCE,EEE,MECH Dept",13);
+	glutAddMenuEntry("Foundry/HV Lab(Workshop)",14);
+	glutAddMenuEntry("Gents Hostel",15);
+	glutAddMenuEntry("Gym/Sports - Basement",16);
+	glutAddMenuEntry("ISE Dept - 3rd Floor",17);
+	glutAddMenuEntry("Laboratory Block",18);
+	glutAddMenuEntry("Library - G Floor",19);
+	glutAddMenuEntry("MCA Dept - 2nd Floor",20);
+	glutAddMenuEntry("Parking(car,bike)",21);
+	glutAddMenuEntry("Placement Cell - 3rd Floor",22);
+	glutAddMenuEntry("Principal Office - G Floor",23);
+	glutAddMenuEntry("EXIT",24);
+	glutAttachMenu(GLUT_RIGHT_BUTTON);
+	glutMainLoop();
+}
